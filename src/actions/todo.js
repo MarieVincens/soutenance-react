@@ -1,18 +1,18 @@
-export const SCRAWLY_ADD = 'SCRAWLY_ADD';
-export const SCRAWLY_REMOVE = 'SCRAWLY_REMOVE';
+export const POLL_ADD = 'POLL_ADD';
+export const POLL_REMOVE = 'POLL_REMOVE';
 
-export function scrawlyAdd(scrawly) {
+export function pollAdd(poll) {
     return{
-        type: SCRAWLY_ADD,
-        payload: scrawly
+        type: POLL_ADD,
+        payload: poll
     }
 
 }
 
-export function scrawlyRemove(scrawly) {
+export function pollRemove(poll) {
     return{
-        type: SCRAWLY_REMOVE,
-        payload: scrawly
+        type: POLL_REMOVE,
+        payload: poll
     }
 
 }

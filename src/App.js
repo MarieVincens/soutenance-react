@@ -1,20 +1,23 @@
 import React from 'react';
-import './App.css';
-import {Route, Switch} from "react-router-dom"
-import Scrawly from "./components/Scrawly";
-import Index from "./components/Index";
-import NewScrawly from "./components/NewScrawly";
+import './css/normalize.css'
+import './css/skeleton.css'
+import './css/style.css'
+import {Route, Switch} from "react-router"
+import NewScrawly from "./containers/NewScrawly";
+import Index from "./containers/Index";
+import Scrawly from "./containers/Scrawly";
+
 
 
 function App() {
   return (
     <div className="App">
       <Switch>
-          <Route path="/" exact component={Index}/>
-          <Route path="/scrawly/:id" render={()=><Scrawly/>}/>}
-          <Route path="/scrawly/new" component = {NewScrawly}/>
-
-          />
+        <Route path="/" exact component={Index}/>
+        <Route path="/scrawly/new" component = {NewScrawly}/>
+        <Route path="/scrawly/:id"
+               render={scawlyProps=><Scrawly {...scawlyProps}/>}
+        />
       </Switch>
     </div>
   );

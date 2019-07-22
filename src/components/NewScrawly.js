@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import slugme from "slugme";
+
+
 
 class NewScrawly extends Component {
     constructor(props) {
@@ -7,7 +10,7 @@ class NewScrawly extends Component {
             poll:{
                 title: "",
                 slug:"",
-                creates_at:"",
+                created_at:"",
             }
         }
 
@@ -18,27 +21,28 @@ class NewScrawly extends Component {
     }
 
     handleSubmit(event) {
-        event.preventDefault();
         this.props.add({
             title: this.state.title,
             slug: this.state.slug,
-            created_at: this.state.created_at
+            created_at: new Date().getDate()
         });
-        this.setState({ value: "" });
     }
 
 
     render() {
+
+        const result = slugme(this.state.title);
+
         return (
             <div>
                 <form onSubmit={event => this.handleSubmit(event)}>
                     <div>
                         <label htmlFor="title">Titre</label>
-                        <input type="text" id="title" placeholder="Scrawl Title"/>
+                        <input type="text" id="title" value={this.state.title} onChange={event => this.handleChange(event)} placeholder="Scrawl Title"/>
                     </div>
                     <div>
                         <label htmlFor="slug">Slug</label>
-                        <input type="text" id="slug" placeholder="Scrawl slug"/>
+                        <input type="text" id="slug" value={this.state.result}>{result}</input>
                     </div>
                     <button type="submit" className="button button-primary">
                         <i className="fa fa-arrow-right"/>

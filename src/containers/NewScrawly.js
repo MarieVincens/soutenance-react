@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
-import {itemAdd} from "../actions/todo";
-import FormNewItem from "../components/NewScrawly";
+import {pollAdd} from "../actions/todo";
+import NewScrawly from "../components/NewScrawly";
 
 
 // Envoyer des données du state au composant
@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 
 // Envoyer des actions au composant
 const mapDispatchToProps = dispatch => ({
-    add: item => dispatch(itemAdd(item))
+    add: poll => dispatch(pollAdd(poll))
 });
 
 export default connect(
