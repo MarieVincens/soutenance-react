@@ -7,8 +7,8 @@ class Index extends Component {
             <section className="homepage bg-blue">
                 <h1>Scrawly</h1>
                 <form>
-                    <input type="text" placeholder="Scrawl slug"/>
-                        <input type="submit" value="GO!"/>
+                    <input type="text" value={this.props.slug} onChange={event => this.props.update(event.target.value)} placeholder="Scrawl slug"/>
+                    <input type="submit" value="GO!"/>
                 </form>
 
                 <NavLink to="/scrawly/new" className="btn">

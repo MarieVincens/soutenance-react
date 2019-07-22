@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
-import todo from "./todo";
+import scrawly from "./scrawly";
 
-const todoApplication = combineReducers({
-    todo
+const scrawlyApplication = combineReducers({
+    scrawly
 });
 
-export default todoApplication
+export default scrawlyApplication

@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {pollAdd} from "../actions/scrawly";
-import Scrawly from "../components/Scrawly";
+
 
 
 // Envoyer des données du state au composant
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Scrawly)
+)(ScrawlyEdit)

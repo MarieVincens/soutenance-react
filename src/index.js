@@ -5,10 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {createStore} from "redux";
 import {Provider} from "react-redux";
-import todoApplication from "./reducers/reducers";
+import scrawlyApplication from "./reducers/reducers";
 import { BrowserRouter} from "react-router-dom";
 
-const store = createStore(todoApplication);
+const store = createStore(scrawlyApplication);
 
 
 
