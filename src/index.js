@@ -8,7 +8,7 @@ import {Provider} from "react-redux";
 import scrawlyApplication from "./reducers/reducers";
 import { BrowserRouter} from "react-router-dom";
 
-const store = createStore(scrawlyApplication);
+const store = createStore(scrawlyApplication, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 
 

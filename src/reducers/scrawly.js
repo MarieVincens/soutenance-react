@@ -18,7 +18,7 @@ function scrawlyApp(state = initialState, action) {
         case UPDATE_TITLE:
             let newTitle = Object.assign({}, state);
             newTitle.scrawl.title = action.payload;
-            return newTitle;
+            return initialState;
         default:
             return state;
     }
