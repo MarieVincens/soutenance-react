@@ -2,7 +2,10 @@ import {
     UPDATE_SLUG,
     UPDATE_TITLE,
     SEARCH_SCRAWL_ERROR,
-    SEARCH_SCRAWL_SUCCESS
+    SEARCH_SCRAWL_SUCCESS,
+    CREATE_SCRAWL_LOADING,
+    CREATE_SCRAWL_SUCCESS,
+    CREATE_SCRAWL_ERROR
 } from '../actions/scrawly';
 import slugme from "slugme";
 
@@ -13,7 +16,8 @@ const initialState = {
         title: '',
         slug: '',
     },
-    error: ""
+    error: "",
+    createScrawlLoading: false
 };
 
 function scrawlyApp(state = initialState, action) {
@@ -37,6 +41,20 @@ function scrawlyApp(state = initialState, action) {
             return {
                 ...state,
                 error: "Scrawl Introuvable"
+            };
+        case CREATE_SCRAWL_LOADING:
+            return {...state, createScrawlLoading:true};
+        case CREATE_SCRAWL_SUCCESS:
+            return {
+            ...state,
+            scrawl: action.payload,
+            createScrawlLoading: false
+        };
+        case CREATE_SCRAWL_ERROR:
+            return {
+                ...state,
+                error:"Erreur lors de la création",
+                createScrawlLoading: false
             };
         default:
             return state;
