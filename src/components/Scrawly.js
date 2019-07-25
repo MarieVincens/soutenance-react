@@ -1,9 +1,15 @@
 import React, {Component} from 'react';
+import Dates from "./scrawlyComponents/Dates";
 
 class Scrawly extends Component {
 
 
     render() {
+
+        const tableDate = this.props.scrawl.choice.map(
+            choice => <Dates key={choice['@id']} choice={choice} />
+        );
+
         return (
             <React.Fragment>
                 <section className="bg-blue">
@@ -14,48 +20,7 @@ class Scrawly extends Component {
                         <thead>
                         <tr>
                             <th />
-                            <th>
-                                <div className="date-container">
-                                    <div className="month">Jan</div>
-                                    <div className="date">12</div>
-                                    <div className="day">Saturday</div>
-                                </div>
-                            </th>
-                            <th>
-                                <div className="date-container">
-                                    <div className="month">Jan</div>
-                                    <div className="date">13</div>
-                                    <div className="day">Sunday</div>
-                                </div>
-                            </th>
-                            <th>
-                                <div className="date-container">
-                                    <div className="month">Jan</div>
-                                    <div className="date">19</div>
-                                    <div className="day">Saturday</div>
-                                </div>
-                            </th>
-                            <th>
-                                <div className="date-container">
-                                    <div className="month">Jan</div>
-                                    <div className="date">20</div>
-                                    <div className="day">Sunday</div>
-                                </div>
-                            </th>
-                            <th>
-                                <div className="date-container">
-                                    <div className="month">Jan</div>
-                                    <div className="date">26</div>
-                                    <div className="day">Saturday</div>
-                                </div>
-                            </th>
-                            <th>
-                                <div className="date-container">
-                                    <div className="month">Jan</div>
-                                    <div className="date">27</div>
-                                    <div className="day">Sunday</div>
-                                </div>
-                            </th>
+                            {tableDate}
                             <th />
                         </tr>
                         </thead>

@@ -10,7 +10,7 @@ class ScrawlyEdit extends Component {
             date: this.props.scrawl.choice,
             poll: this.props.scrawl["@id"]
         });
-        console.log(this.props.scrawl)
+        console.log(this.props.scrawl["@id"])
     }
 
     render() {
