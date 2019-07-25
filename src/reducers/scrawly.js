@@ -5,7 +5,10 @@ import {
     SEARCH_SCRAWL_SUCCESS,
     CREATE_SCRAWL_LOADING,
     CREATE_SCRAWL_SUCCESS,
-    CREATE_SCRAWL_ERROR
+    CREATE_SCRAWL_ERROR,
+    ADD_CHOICE_SUCCESS,
+    ADD_CHOICE_ERROR,
+    UPDATE_CHOICE
 } from '../actions/scrawly';
 import slugme from "slugme";
 
@@ -32,6 +35,11 @@ function scrawlyApp(state = initialState, action) {
                 ...state,
                 scrawl: { ...state.scrawl, title: action.payload, slug: slugme(action.payload) }
             };
+        case UPDATE_CHOICE:
+            return{
+                ...state,
+                scrawl:{...state, choice: action.payload}
+            };
         case SEARCH_SCRAWL_SUCCESS:
             return{
                 ...state,
@@ -55,6 +63,16 @@ function scrawlyApp(state = initialState, action) {
                 ...state,
                 error:"Erreur lors de la création",
                 createScrawlLoading: false
+            };
+        case ADD_CHOICE_SUCCESS:
+            return{
+                ...state,
+                scrawl: { ...state.scrawl, choice: action.payload}
+            };
+        case ADD_CHOICE_ERROR:
+            return {
+                ...state,
+                error:"Impossible d'ajouter la date"
             };
         default:
             return state;

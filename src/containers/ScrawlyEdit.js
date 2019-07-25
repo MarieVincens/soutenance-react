@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {pollAdd} from "../actions/scrawly";
+import {addChoice, updateChoice} from "../actions/scrawly";
 import ScrawlyEdit from "../components/ScrawlyEdit";
 
 
@@ -7,13 +7,16 @@ import ScrawlyEdit from "../components/ScrawlyEdit";
 // Envoyer des données du state au composant
 const mapStateToProps = state => {
     return {
-        scrawl: state.scrawly.scrawl
+        scrawl: state.scrawly.scrawl,
+        choice: state.scrawly.scrawl.choices,
+        poll:state.scrawly.scrawl["@id"],
     }
 };
 
 // Envoyer des actions au composant
 const mapDispatchToProps = dispatch => ({
-    add: poll => dispatch(pollAdd(poll))
+    addChoice: choice => dispatch(addChoice(choice)),
+    updateChoice: choice => dispatch(updateChoice(choice))
 });
 
 export default connect(

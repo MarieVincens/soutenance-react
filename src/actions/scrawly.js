@@ -5,6 +5,7 @@ export const UPDATE_TITLE = 'UPDATE_TITLE';
 export const ADD_CHOICE = "ADD_CHOICE";
 export const ADD_CHOICE_SUCCESS = "ADD_CHOICE_SUCCESS";
 export const ADD_CHOICE_ERROR = "ADD_CHOICE_ERROR ";
+export const UPDATE_CHOICE = 'UPDATE_CHOICE';
 export const SEARCH_SCRAWL_SUCCESS = 'SEARCH_SCRAWL_SUCCESS';
 export const SEARCH_SCRAWL_ERROR = 'SEARCH_SCRAWL_ERROR';
 export const CREATE_SCRAWL_SUCCESS = 'CREATE_SCRAWL_SUCCESS';
@@ -152,6 +153,15 @@ export function addChoiceError() {
 
     return {
         type: ADD_CHOICE_ERROR,
+    }
+
+}
+
+export function updateChoice(choice) {
+
+    return{
+        type: UPDATE_CHOICE,
+        payload: choice
     }
 
 }
