@@ -67,7 +67,7 @@ function scrawlyApp(state = initialState, action) {
         case ADD_CHOICE_SUCCESS:
             return{
                 ...state,
-                scrawl: { ...state.scrawl, choice: action.payload}
+                choice: action.payload
             };
         case ADD_CHOICE_ERROR:
             return {

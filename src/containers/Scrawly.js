@@ -9,7 +9,6 @@ const mapStateToProps = state => {
     }
 };
 
-
 export default connect(
     mapStateToProps,
 )(Scrawly)

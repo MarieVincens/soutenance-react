@@ -120,7 +120,7 @@ export function createScrawlLoading() {
 }
 
 export function addChoice(choice) {
-
+console.log(choice);
     return dispatch =>{
         fetch( process.env.REACT_APP_API + 'choices', {
             method: 'POST',
@@ -131,7 +131,7 @@ export function addChoice(choice) {
         })
             .then(response=>response.json())
             .then(data=>{
-                if (data["hydra:member"]!== "hydra:Error") {
+                if (data["@type"]!== "hydra:Error") {
                     dispatch(addChoiceSuccess(data))
                 }else{
                     dispatch(addChoiceError());

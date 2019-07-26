@@ -1,14 +1,18 @@
 import React, {Component} from 'react';
 import Dates from "./scrawlyComponents/Dates";
+import Persons from "./scrawlyComponents/Persons";
 
 class Scrawly extends Component {
-
 
     render() {
 
         const tableDate = this.props.scrawl.choice.map(
             choice => <Dates key={choice['@id']} choice={choice} />
         );
+
+        //const tablePerson = this.props.person.map(
+            //person => <Persons key={person['@id']} person={person}/>
+       // );
 
         return (
             <React.Fragment>
